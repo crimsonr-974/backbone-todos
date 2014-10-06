@@ -7,3 +7,6 @@ Applications based on Mvc with backbone.js
 * use Underscore.js
 * use jQuery.js
 
+Making a basic todoList.
+
+
