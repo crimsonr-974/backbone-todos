@@ -1,0 +1,9 @@
+{
+	"name": "Backbone-todos",
+	"version": "0.0.1",
+	"dependencies": {
+		"backbone": "latest",
+		"underscore": "latest",
+		"jquery": "1.10.2"
+	}
+}
