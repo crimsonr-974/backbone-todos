@@ -4,7 +4,6 @@ app.collections.ToDos = Backbone.Collection.extend({
         this.add({ title: "Go to backbonejs.org" });
         this.add({ title: "Develop a Backbone application" });
     },
-    model: app.models.ToDo
     up: function(index) {
         if(index > 0) {
             var tmp = this.models[index-1];
@@ -26,5 +25,6 @@ app.collections.ToDos = Backbone.Collection.extend({
     },
     changeStatus: function(done, index) {
         this.models[index].set("done", done);
-    }
+    },
+    model: app.models.ToDo
 });

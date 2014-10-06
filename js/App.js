@@ -8,13 +8,24 @@ var app = (function(){
 		todos: null,
 		init: function(){
 			this.content = $("#content");
+			this.todos = new api.collections.ToDos();
+			return this;
 		},
 		changeContent: function(el){
 			this.content.empty().append(el);
 			return this;
 		}
 	};
-	var ViewsFactory = {};
+	var ViewsFactory = {
+		menu: function(){
+			if(!this.menuView){
+				this.menuView = new api.views.menu({
+					el: $("#menu")
+				});
+			}
+			return this.menuView;
+		}
+	};
 	var Router = Backbone.Router.extend({});
 	api.router = new Router();
 
