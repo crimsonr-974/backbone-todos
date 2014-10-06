@@ -30,7 +30,7 @@ app.views.list = Backbone.View.extend({
         html += '</ul>';
         this.$el.html(html);
         this.delegateEvents();
-        return this;        
+        return this;
     },
     priorityUp: function(e) {
         var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
@@ -42,11 +42,11 @@ app.views.list = Backbone.View.extend({
     },
     archive: function(e) {
         var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
-        this.model.archive(this.mode !== "archive", index);
+        this.model.archive(this.mode !== "archive", index); 
     },
     changeStatus: function(e) {
         var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
-        this.model.changeStatus(e.target.checked, index);
+        this.model.changeStatus(e.target.checked, index);       
     },
     setMode: function(mode) {
         this.mode = mode;

@@ -43,6 +43,13 @@
 	        </div>
 	    </li>
 	</script>
+
+	<script type="text/template" id="tpl-form">
+	    <form>
+	        <textarea><%= title %></textarea>
+	        <button>save</button>
+	    </form>
+	</script>
     <!--*************************************************
 		Applications js
     **************************************************-->
@@ -51,6 +58,8 @@
     <script src="bower_components/backbone/backbone.js"></script>
     <script src="js/App.js"></script>
     <script src="js/views/menu.js"></script>
+    <script src="js/views/list.js"></script>
+    <script src="js/views/form.js"></script>
     <script src="js/models/ToDo.js"></script>
     <script src="js/collections/ToDos.js"></script>
     <script>
