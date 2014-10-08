@@ -41,11 +41,11 @@ app.views.list = Backbone.View.extend({
         this.model.down(index);
     },
     archive: function(e) {
-        var index = parseInt(e.target.parentNode.parentNode.parentNode.getAttribute("data-index"));
+        var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
         this.model.archive(this.mode !== "archive", index); 
     },
     changeStatus: function(e) {
-        var index = parseInt(e.target.parentNode.parentNode.parentNode.getAttribute("data-index"));
+        var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
         this.model.changeStatus(e.target.checked, index);       
     },
     setMode: function(mode) {
