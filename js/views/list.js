@@ -13,7 +13,7 @@ app.views.list = Backbone.View.extend({
         this.model.bind('remove', handler);
     },
     render: function() {
-        var html = '<ul class="list">', 
+        var html = '<div class="todo"><ul>', 
             self = this;
         this.model.each(function(todo, index) {
             if(self.mode === "archive" ? todo.get("archived") === true : todo.get("archived") === false) {
@@ -33,19 +33,19 @@ app.views.list = Backbone.View.extend({
         return this;
     },
     priorityUp: function(e) {
-        var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
+        var index = parseInt(e.target.parentNode.parentNode.parentNode.getAttribute("data-index"));
         this.model.up(index);
     },
     priorityDown: function(e) {
-        var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
+        var index = parseInt(e.target.parentNode.parentNode.parentNode.getAttribute("data-index"));
         this.model.down(index);
     },
     archive: function(e) {
-        var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
+        var index = parseInt(e.target.parentNode.parentNode.parentNode.getAttribute("data-index"));
         this.model.archive(this.mode !== "archive", index); 
     },
     changeStatus: function(e) {
-        var index = parseInt(e.target.parentNode.parentNode.getAttribute("data-index"));
+        var index = parseInt(e.target.parentNode.parentNode.parentNode.getAttribute("data-index"));
         this.model.changeStatus(e.target.checked, index);       
     },
     setMode: function(mode) {

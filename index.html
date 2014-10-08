@@ -11,7 +11,8 @@
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="assets/css/vendor/bootstrap.min.css" rel="stylesheet">
-		<link href="assets/css/flat-ui.min.css" rel="stylesheet">
+		<link href="assets/css/flat-ui.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -23,33 +24,50 @@
 		Views Applications
     **************************************************-->
 	<script type="text/template" id="tpl-menu">
-	    <ul>
-	        <li><a href="#">List</a></li>
-	        <li><a href="#archive">Archive</a></li>
-	        <li class="right"><a href="#new">+</a></li>
-	    </ul>
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+		      <span class="sr-only">Toggle navigation</span>
+		    </button>
+		    <a class="navbar-brand" href="#">My Todo-List</a>
+		  </div>
+		  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+		    <ul class="nav navbar-nav">
+		      <li class="active">
+		      	<a href="#">List</a>
+		      </li>
+		      <li>
+		      	<a href="#archive">Archive</a>
+		      </li>
+		      <li>
+		      	<a href="#new">+ Add New</a>
+		      </li>
+		    </ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav><!-- /navbar -->
 	</script>
 
 	<script type="text/template" id="tpl-list-item">
-	    <li class="cf done-<%= done %>" data-index="<%= index %>">
-	        <h2>
-	            <input type="checkbox" data-status <%= doneChecked %> />
-	            <a href="javascript:void(0);" data-up>&#8593;</a>
-	            <a href="javascript:void(0);" data-down>&#8595;</a>
-	            <%= title %>
-	        </h2>
-	        <div class="options">
-	            <a href="#edit/<%= index %>">edit</a>
-	            <a href="javascript:void(0);" data-archive><%= archiveLink %></a>
-	            <a href="#delete/<%= index %>">delete</a>
-	        </div>
-	    </li>
+      <li class="cf done-<%= done %>" data-index="<%= index %>">
+        <div class="todo-icon fui-list"></div>
+        <div class="todo-content">
+          <a href="javascript:void(0);" data-up><i class="fui-triangle-up"></i></a>
+	      <a href="javascript:void(0);" data-down><i class="fui-triangle-down"></i></a>
+          <h4 class="todo-name">
+            <%= title %>
+          </h4>
+          <input class="b-choose" type="checkbox" data-status <%= doneChecked %> />
+	      <a href="#edit/<%= index %>">edit -</a>
+	      <a href="javascript:void(0);" data-archive><%= archiveLink %> -</a>
+	      <a href="#delete/<%= index %>">delete</a>
+        </div>
+      </li>
 	</script>
 
 	<script type="text/template" id="tpl-form">
 	    <form>
-	        <textarea></textarea>
-	        <button>save</button>
+	        <textarea class="form-control"></textarea>
+	        <button class="myButton btn btn-embossed btn-primary">Save</button>
 	    </form>
 	</script>
     <!--*************************************************
@@ -58,6 +76,9 @@
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="assets/scripts/flat-ui.js"></script>
+    <script src="assets/scripts/radiocheck.js"></script>
+    <script src="assets/scripts/application.js"></script>
     <script src="js/App.js"></script>
     <script src="js/views/menu.js"></script>
     <script src="js/views/list.js"></script>
