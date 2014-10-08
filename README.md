@@ -9,4 +9,6 @@ Applications based on Mvc with backbone.js
 
 Making a basic todoList.
 
+Demo project : [Todos Backbone](http://backbone-todos.crimsonr.fr/ "Title")
+
 
